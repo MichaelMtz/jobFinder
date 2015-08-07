@@ -1,0 +1,19 @@
+{
+  "name": "jsciexample1",
+  "version": "1.0.0",
+  "description": "simple app to see CI in action",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maykel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "http": "0.0.0",
+    "vash": "^0.9.3"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1"
+  }
+}

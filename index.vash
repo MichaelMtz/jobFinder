@@ -1,0 +1,21 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>hello</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+  </head>
+  <body ng-app='app'>
+    <div class='container' ng-controller='testCtrl'>
+    	<h1>Find a Job Today!</h1>
+    	<div class="list-group">
+		  <a href="#" class="list-group-item" ng-repeat='job in jobs'>
+		    <h4 class="list-group-item-heading">{{ job.title }}</h4>
+		    <p class="list-group-item-text">{{ job.description }}</p>
+		  </a>
+		</div>
+    </div>
+  </body>
+</html>

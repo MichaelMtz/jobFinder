@@ -1,0 +1,18 @@
+{
+  "name": "jsciexample1",
+  "version": "0.0.0",
+  "authors": [
+    "Maykel Martinez <mmartine@thoughtworks.com>"
+  ],
+  "description": "Simple app to see CI in action",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.3",
+    "bootstrap": "~3.3.5"
+  }
+}
