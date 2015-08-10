@@ -17,7 +17,7 @@ app.get('*', function(req, res){
 
 // server.listen(3000);
 
-mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/jobfinder');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/jobfinder');
 
 var con = mongoose.connection;
 
