@@ -10,18 +10,30 @@ function resetJobs(){
 	});
 }
 
-var connectDB = Promise.promisify(mongoose.connect, mongoose);
+var jobs;
 
 describe('get jobs', function(){
-	it('should never be empty since jobs are seeded', function(done){
-		
-		connectDB(process.env.MONGOLAB_URI || 'mongodb://localhost/jobfinder')
+
+	before(function(done){
+		jobsData.connectDB(process.env.MONGOLAB_URI || 'mongodb://localhost/jobfinder')
 			.then(resetJobs)
-			.then(jobModel.seedJobs)
+			.then(jobsData.seedJobs)
 			.then(jobsData.findJobs)
 			.then(function(jobsList){
-				expect(jobsList.length).to.be.at.least(1);
+				jobs = jobsList;
 				done();
-			}); 		
+		});
+	});
+
+	it('should never be empty since jobs are seeded', function(){
+		expect(jobs.length).to.be.at.least(1);	 		
+	});
+
+	it('should have a job with a title', function(){
+		expect(jobs[0].title).to.not.be.empty;
+	});
+
+	it('should have a job with a description', function(){
+		expect(jobs[0].description).to.not.be.empty;
 	});
 });
