@@ -30,7 +30,7 @@ app.get('*', function(req, res){
 
 //mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/jobfinder');
 
-jobsData.connectDB('mongodb://localhostttt/jobfinder')
+jobsData.connectDB(process.env.MONGOLAB_URI || 'mongodb://localhost/jobfinder')
 .then(function(){
 		console.log('connected to mongodb successfully!');
 		jobModel.seedJobs();
