@@ -15,7 +15,7 @@ var jobs;
 describe('get jobs', function(){
 
 	before(function(done){
-		jobsData.connectDB(process.env.MONGOLAB_URI || 'mongodb://localhostt/jobfinder')
+		jobsData.connectDB(process.env.MONGOLAB_URI || 'mongodb://localhost/jobfinder')
 			.then(resetJobs)
 			.then(jobsData.seedJobs)
 			.then(jobsData.findJobs)
