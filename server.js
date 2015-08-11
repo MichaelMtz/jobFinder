@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var jobModel = require('./models/jobs.js');
+var jobsData = require('./jobs-data.js');
 //var http = require("http");
 
 var app = express();
@@ -11,10 +12,16 @@ app.set('view engine', 'vash');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/api/jobs', function(req, res){
-	mongoose.model('Job').find({}).exec(function(error, collection){
-		res.send(collection);
-	});
-	//res.send('test!');
+	
+	jobsData.findJobs({}).then(
+			function(collection){
+				res.send(collection);
+			}
+		);
+
+	// mongoose.model('Job').find({}).exec(function(error, collection){
+	// 	res.send(collection);
+	// });
 });
 
 app.get('*', function(req, res){

@@ -9,12 +9,14 @@
   "author": "Maykel",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^2.9.34",
     "express": "^4.13.3",
     "http": "0.0.0",
     "mongoose": "^4.1.1",
     "vash": "^0.9.3"
   },
   "devDependencies": {
-    "bower": "^1.4.1"
+    "bower": "^1.4.1",
+    "chai": "^3.2.0"
   }
 }
