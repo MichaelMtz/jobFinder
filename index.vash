@@ -7,9 +7,16 @@
     <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/app/jobs.js"></script>
   </head>
   <body ng-app='app'>
     <div class='container' ng-controller='testCtrl'>
+      <h1>Post a new Job</h1>
+      <form class="form-group" ng-submit="submit()">
+        <input type="text" class="form-group form-control" placeholder="Title" ng-model="title" />
+        <textarea class="form-group form-control" placeholder="Description" ng-model="description" ></textarea>
+        <input type="submit" class="form-group btn btn-primary" value="Post" />
+      </form>
     	<h1>Find a Job Today!</h1>
     	<div class="list-group">
 		  <a href="#" class="list-group-item" ng-repeat='job in jobs'>
